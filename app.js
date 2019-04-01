@@ -23,8 +23,11 @@ const indexRoutes        = require("./routes/index");
 // code to use body parser
 app.use(bodyParser.urlencoded({extended: true}));
 
-// code to connect to the mongo database
-mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", { useNewUrlParser: true });
+// code to connect to the mongo database locally
+//mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", { useNewUrlParser: true });
+
+//code to connect the mongo database to Mongo DB Atlas
+mongoose.connect("mongodb+srv://Rodrigo:rodrigo@yelpcampcluster-tautd.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
 
 // code to use ejs and to avoid writing ".ejs" 
 app.set("view engine", "ejs");
