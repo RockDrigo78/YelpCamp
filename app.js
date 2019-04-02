@@ -27,7 +27,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 //mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", { useNewUrlParser: true });
 
 //code to connect the mongo database to Mongo DB Atlas
-mongoose.connect("mongodb+srv://Rodrigo:rodrigo@yelpcampcluster-tautd.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+//mongoose.connect("mongodb+srv://Rodrigo:rodrigo@yelpcampcluster-tautd.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+
+// code to connect the mongo database depending on the ENVIROMENTAL Variables
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 // code to use ejs and to avoid writing ".ejs" 
 app.set("view engine", "ejs");
